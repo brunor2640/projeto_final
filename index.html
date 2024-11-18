@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Previsão</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc; /* Cor de fundo suave e clara */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50; /* Cor verde para o título */
+            text-align: center; /* Centralizar o título */
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .form-container label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .form-container input[type="number"] {
+            appearance: none;
+        }
+        .form-container input[type="number"]::-webkit-outer-spin-button,
+        .form-container input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Previsão de Custos de Saúde</h1>
+
+    <div class="form-container">
+        <form action="/previsao" method="POST">
+            <label for="age">Idade:</label>
+            <input type="number" name="age" min="0" required>
+
+            <label for="sex_male">Sexo:</label>
+            <select name="sex_male" required>
+                <option value="0">Feminino</option>
+                <option value="1">Masculino</option>
+            </select>
+
+            <label for="smoker_yes">Fumante:</label>
+            <select name="smoker_yes" required>
+                <option value="0">Não</option>
+                <option value="1">Sim</option>
+            </select>
+
+            <label for="bmi">IMC:</label>
+            <input type="number" name="bmi" min="0" step="any" required>
+
+            <label for="children">Número de filhos:</label>
+            <input type="number" name="children" min="0" max="5" required>
+
+            <label for="region_northwest">Região Noroeste:</label>
+            <select name="region_northwest" required>
+                <option value="0">Não</option>
+                <option value="1">Sim</option>
+            </select>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+</body>
+</html>
+
+
+
